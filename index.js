@@ -2,9 +2,10 @@
 const inquirer = require ('inquirer');
 const fs = require ('fs');
 const { type } = require('os');
+const generateMarkdown = require ('./utils/generateMarkdown')
 
 // TODO: Create an array of questions for user input
-const questions = [
+const init = () => [
    inquirer.prompt([
         {
             type: 'input',
@@ -62,15 +63,39 @@ const questions = [
             validate: (emailInput)=> { if(emailInput){return true}else {return 'Please provide an email address to proceed.'}},
         }
 
-    ])
+    ]),
 ];
 
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
 
-// TODO: Create a function to initialize app
-function init() {}
+// // TODO: Create a function to write README file
+const writeFile = (fileContent) => {
+    return new Promise((resolve, reject) => {
+      fs.writeFile('./Defrese-README/README.md', fileContent, (err) => {
+        if (err) {
+          reject(err);
+          console.log('There was an issue creating the file, please try again.');
+          return;
+        }
+        resolve({
+          ok: true,
+          message: "README created!",
+        });
+      });
+    });
+  };
 
-// Function call to initialize app
-init();
+// // TODO: Create a function to initialize app
+init()
+    inquirer.prompt(questions)
+        .then(function(questions){
+            console.log(questions);
+        var fileContent = generateMarkdown(answer);
+        writeToFile(fileContent)
+        });
+
+
+// // Function call to initialize app
+
+
+module.exports = questions; 
