@@ -5,7 +5,7 @@ const { type } = require('os');
 const generateMarkdown = require ('./utils/generateMarkdown')
 
 // TODO: Create an array of questions for user input
-const init = () => [
+const questions = () => [
    inquirer.prompt([
         {
             type: 'input',
@@ -86,10 +86,9 @@ const writeFile = (fileContent) => {
   };
 
 // // TODO: Create a function to initialize app
-init()
+questions ()
     inquirer.prompt(questions)
         .then(function(questions){
-            console.log(questions);
         var fileContent = generateMarkdown(answer);
         writeToFile(fileContent)
         });
