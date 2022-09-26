@@ -1,12 +1,11 @@
 // TODO: Include packages needed for this application
 const inquirer = require ('inquirer');
 const fs = require ('fs');
-const { type } = require('os');
+const path = require('path');
 const generateMarkdown = require ('./utils/generateMarkdown')
 
 // TODO: Create an array of questions for user input
-const questions = () => [
-   inquirer.prompt([
+   const questions = [
         {
             type: 'input',
             message: 'What is the title of your project?',
@@ -63,38 +62,42 @@ const questions = () => [
             validate: (emailInput)=> { if(emailInput){return true}else {return 'Please provide an email address to proceed.'}},
         }
 
-    ]),
-];
+    ];
 
 
 
-// // TODO: Create a function to write README file
-const writeFile = (fileContent) => {
-    return new Promise((resolve, reject) => {
-      fs.writeFile('./Defrese-README/README.md', fileContent, (err) => {
-        if (err) {
-          reject(err);
-          console.log('There was an issue creating the file, please try again.');
-          return;
-        }
-        resolve({
-          ok: true,
-          message: "README created!",
-        });
-      });
-    });
-  };
+// TODO: Create a function to write README file
+function writeToFile (fileName, data) {
+    return fs.writeFileSync(path.join(process.cwd(),fileName), data)
+}
+
+
+// const writeToFile = (fileContent) => {
+//     return new Promise((resolve, reject) => {
+//       fs.writeToFile('./Defrese-README/README.md', fileContent, (err) => {
+//         if (err) {
+//           reject(err);
+//           console.log('There was an issue creating the file, please try again.');
+//           return;
+//         }
+//         resolve({
+//           ok: true,
+//           message: "README created!",
+//         });
+//       });
+//     });
+//   };
 
 // // TODO: Create a function to initialize app
-questions ()
+function init() {
     inquirer.prompt(questions)
-        .then(function(questions){
-        var fileContent = generateMarkdown(answer);
-        writeToFile(fileContent)
+        .then(fileContent => {
+        // var fileContent = generateMarkdown(answer);
+        writeToFile('README.md', generateMarkdown({ ...fileContent }))
         });
+};
 
+// // // Function call to initialize app
+init ();
 
-// // Function call to initialize app
-
-
-module.exports = questions; 
+exports.questions = questions;
