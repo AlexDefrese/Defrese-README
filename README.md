@@ -1,10 +1,9 @@
-  ## Link to Video
-  [Video](https://drive.google.com/file/d/1Rk1sz9aePUYT7Xm5YgakGzgHFOnFzdTD/view)
-  
-  # <u>My Awesome Project</u>
 
-  ![License](https://img.shields.io/badge/License-Apache-green.svg)
+  # <u>DEFRESE-README</u>
 
+  [Video-Link](https://drive.google.com/file/d/19sxFrChmlqxuk6jyLE4RIGAjDN4b36BK/view)
+
+  ![License](https://img.shields.io/badge/License-MIT-green.svg)
   
 
   ## <u>Table of Contents:</u>
@@ -17,24 +16,24 @@
   ### * [Questions](#questions)
 
   ## License
-  ### Apache
+  ### MIT
 
   ## <u>Description</u>
-  ### It's pretty awesome
+  ### it generates a README.md
 
   ## <u>Installation:</u>
   ### Please follow these steps to install:
-  ### Be Awesome
+  ### You have to beleive in yourself
 
   ## <u>Usage:</u>
-  ### Keep on keeping on
+  ### You follow the prompts!
 
   ## <u>Contributors:</u> 
-  ### Awesome People
+  ### Awesome people
 
   ## <u>Testing:</u>
   ### Please follow these steps to test the project:
-  ### Be Careful
+  ### Try to skip a prompt
 
   ## <u>Questions:</u> 
   ### If you have any questions or suggestions, please contact me through either
