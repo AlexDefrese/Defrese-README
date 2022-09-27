@@ -1,7 +1,10 @@
+  ## Link to Video
+  [Video](https://drive.google.com/file/d/1Rk1sz9aePUYT7Xm5YgakGzgHFOnFzdTD/view)
+  
+  # <u>My Awesome Project</u>
 
-  # <u>a;ldgkh</u>
+  ![License](https://img.shields.io/badge/License-Apache-green.svg)
 
-  ![License](https://img.shields.io/badge/License-MIT-green.svg)
   
 
   ## <u>Table of Contents:</u>
@@ -14,27 +17,27 @@
   ### * [Questions](#questions)
 
   ## License
-  ### MIT
+  ### Apache
 
   ## <u>Description</u>
-  ### a;lkdsgh
+  ### It's pretty awesome
 
   ## <u>Installation:</u>
   ### Please follow these steps to install:
-  ### a;lsdgk
+  ### Be Awesome
 
   ## <u>Usage:</u>
-  ### ;adklsgh
+  ### Keep on keeping on
 
   ## <u>Contributors:</u> 
-  ### a;lksdgh
+  ### Awesome People
 
   ## <u>Testing:</u>
   ### Please follow these steps to test the project:
-  ### al;hgk
+  ### Be Careful
 
   ## <u>Questions:</u> 
   ### If you have any questions or suggestions, please contact me through either
-  ### GitHub: https://github.com/a;gdh
+  ### GitHub: https://github.com/AlexDefrese
   ### or
-  ### Email: a;ldskgh
+  ### Email: Alex@email.com
