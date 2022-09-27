@@ -1,10 +1,10 @@
-// TODO: Include packages needed for this application
+// packages needed
 const inquirer = require ('inquirer');
 const fs = require ('fs');
 const path = require('path');
 const generateMarkdown = require ('./utils/generateMarkdown')
 
-// TODO: Create an array of questions for user input
+// question array
    const questions = [
         {
             type: 'input',
@@ -31,10 +31,10 @@ const generateMarkdown = require ('./utils/generateMarkdown')
             validate: (usageInput)=> { if(usageInput){return true}else {return 'Please provide instructions on how to use your project to proceed.'}},
         },
         {
-            type: 'list',
-            message: 'Which license applies:',
+            type: 'rawlist',
+            message: 'Which license applies: (Note: please choose last item if no license was used)',
             name: 'license',
-            choices: ['MIT', 'GPL', 'Apache', 'GNU', 'N/A'],
+            choices: ['MIT', 'GPL', 'Apache', 'GNU', ''],
             validate: (licenseInput)=> { if(licenseInput){return true}else {return 'Please provide a license for your project to proceed.'}},
         },
         {
@@ -65,39 +65,21 @@ const generateMarkdown = require ('./utils/generateMarkdown')
     ];
 
 
-
-// TODO: Create a function to write README file
+// function that writes file
 function writeToFile (fileName, data) {
-    return fs.writeFileSync(path.join(process.cwd(),fileName), data)
+    return fs.writeFileSync(path.join(process.cwd(),fileName), data);
+    
 }
 
-
-// const writeToFile = (fileContent) => {
-//     return new Promise((resolve, reject) => {
-//       fs.writeToFile('./Defrese-README/README.md', fileContent, (err) => {
-//         if (err) {
-//           reject(err);
-//           console.log('There was an issue creating the file, please try again.');
-//           return;
-//         }
-//         resolve({
-//           ok: true,
-//           message: "README created!",
-//         });
-//       });
-//     });
-//   };
-
-// // TODO: Create a function to initialize app
+// initializes generateMarkdown once questions are answered
 function init() {
     inquirer.prompt(questions)
         .then(fileContent => {
-        // var fileContent = generateMarkdown(answer);
         writeToFile('README.md', generateMarkdown({ ...fileContent }))
+    console.log('README.md created!');
+
         });
 };
 
-// // // Function call to initialize app
+// Function call to initialize app
 init ();
-
-exports.questions = questions;
